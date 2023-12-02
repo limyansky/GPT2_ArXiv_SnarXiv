@@ -10,7 +10,7 @@ class SnarTok(BaseTokenizer):
     """GPT2 Tokenizer for SnarXiv-tuned GPT2"""
     def __init__(self, config):
         super().__init__(config)
-        self.tokenizer = None # Consider self.load here
+        self.load()
 
     def load(self):
         self.tokenizer = GPT2TokenizerFast.from_pretrained(self.config["tokenizer"]["name"],
