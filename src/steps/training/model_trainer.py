@@ -61,15 +61,15 @@ def model_trainer(
 
     # Early Stopping callback
     cb_EarlyStopping = tf.keras.callbacks.EarlyStopping(
-        monitor = 'val_loss',
+        monitor = 'loss',
         restore_best_weights = True,
         min_delta = 0.1,
         patience = 2)
 
     ### Prepare Data for GPT2 ###
 
-    # Pull only the relevant column from the dataset
-    tokenized_dataset = tokenized_dataset.select_columns(["tokenized_string"])
+    # Pull only the relevant columns from the dataset
+    tokenized_dataset = tokenized_dataset.select_columns(["input_ids", "attention_mask"])
 
     # Create training and validation data
     # Can add 'seed' option for reproducibility
@@ -86,7 +86,7 @@ def model_trainer(
         batch_size = train_batch_size)
 
     tf_valid = model.prepare_tf_dataset(
-        train_valid_set["valid"],
+        train_valid_set["test"],
         collate_fn = data_collator,
         batch_size = train_batch_size)
 

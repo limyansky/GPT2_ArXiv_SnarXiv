@@ -18,8 +18,8 @@ def tokenization_step(
     """
 
     def tokenizer_mapper(data:Dataset):
-        data["tokenized_string"] = tokenizer(data["training_string"], padding=False)
-        return data
+        tokenized_data = tokenizer(data["training_string"], padding=False)
+        return tokenized_data
 
     dataset = dataset.map(tokenizer_mapper)
 
