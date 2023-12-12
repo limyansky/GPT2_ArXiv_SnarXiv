@@ -5,14 +5,14 @@ At the moment, the path to the dataset is hardcoded.
 """
 
 from typing_extensions import Annotated
-from datasets import load_dataset, DatasetDict
+from datasets import load_dataset, Dataset
 from zenml import step
 from zenml.logger import get_logger
 
 logger = get_logger(__name__)
 
 @step
-def data_loader() -> Annotated[DatasetDict, "dataset"]:
+def data_loader() -> Annotated[Dataset, "dataset"]:
     """
     Reads a .json file containing the ArXiv dataset.
 

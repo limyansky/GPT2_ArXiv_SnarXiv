@@ -1,7 +1,7 @@
 """Performs model training"""
 from typing import Optional
 
-from datasets import DatasetDict
+from datasets import Dataset
 from transformers import (
     PreTrainedTokenizerBase,
     DataCollatorForLanguageModeling,
@@ -18,7 +18,7 @@ logger = get_logger(__name__)
 
 @step
 def model_trainer(
-    tokenized_dataset: DatasetDict,
+    tokenized_dataset: Dataset,
     tokenizer: PreTrainedTokenizerBase,
     train_batch_size: Optional[int] = 32,
     ):
@@ -67,6 +67,9 @@ def model_trainer(
         patience = 2)
 
     ### Prepare Data for GPT2 ###
+
+    # Pull only the relevant column from the dataset
+    tokenized_dataset = tokenized_dataset.select_columns(["tokenized_string"])
 
     # Create training and validation data
     # Can add 'seed' option for reproducibility
