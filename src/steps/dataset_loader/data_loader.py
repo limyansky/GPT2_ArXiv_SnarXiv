@@ -20,7 +20,7 @@ def data_loader() -> Annotated[Dataset, "dataset"]:
         The loaded dataset artifact.
     """
 
-    dataset_path = "../../../data/raw/arxiv-metadata-oai-snapshot.json"
+    dataset_path = "/home/brent/Documents/github/GPT2_ArXiv_SnarXiv/data/raw/arxiv-metadata-oai-snapshot.json"
 
     logger.info("Loading dataset from {}".format(dataset_path))
 

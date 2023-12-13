@@ -2,7 +2,7 @@
 
 from steps import (
     data_loader,
-    data_processor,
+    process_data,
     tokenizer_loader,
     tokenization_step,
     model_trainer
@@ -22,8 +22,8 @@ def SnarXiv_training_pipeline(
     ### Load Dataset Stage ###
     dataset = data_loader()
 
-    logger.warn("Trimming data to 1,000 instances for debugging.")
-    dataset = dataset[:1000]
+    #logger.warn("Trimming data to 1,000 instances for debugging.")
+    #dataset = dataset[range(1000)]
 
     ### Process Dataset Stage ###
     data = process_data(dataset)
