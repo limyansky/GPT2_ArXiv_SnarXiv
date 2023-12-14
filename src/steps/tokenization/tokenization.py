@@ -21,6 +21,8 @@ def tokenization_step(
         tokenized_data = tokenizer(data["training_string"], padding=False)
         return tokenized_data
 
+    logger.info("Tokenizing...")
+
     dataset = dataset.map(tokenizer_mapper)
 
     return dataset

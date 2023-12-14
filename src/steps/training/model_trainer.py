@@ -96,6 +96,8 @@ def model_trainer(
     tf.keras.mixed_precision.set_global_policy("mixed_float16")
 
     ### Train ###
+    logger.info("Beginning training...")
+    
     model.fit(tf_train, validation_data=tf_valid,
               epochs=100, callbacks=[cb_EarlyStopping])
 

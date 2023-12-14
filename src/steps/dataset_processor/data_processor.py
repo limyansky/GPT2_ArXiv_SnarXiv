@@ -72,7 +72,7 @@ def process_data(data: Dataset) -> Annotated[Dataset, "Processed Dataset"]:
     logger.info("Cleaning paper titles...")
     data = data.map(clean_txt_mapper)
 
-    logger.info("Creating training strings")
+    logger.info("Creating training strings...")
     data = data.map(training_string_mapper)
 
     return data
