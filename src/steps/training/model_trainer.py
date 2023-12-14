@@ -61,7 +61,7 @@ def model_trainer(
 
     # Early Stopping callback
     cb_EarlyStopping = tf.keras.callbacks.EarlyStopping(
-        monitor = 'loss',
+        monitor = 'val_loss',
         restore_best_weights = True,
         min_delta = 0.1,
         patience = 2)

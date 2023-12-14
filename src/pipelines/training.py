@@ -13,6 +13,7 @@ from zenml.logger import get_logger
 
 logger = get_logger(__name__)
 
+@pipeline
 def SnarXiv_training_pipeline(
     ):
     """
@@ -21,9 +22,6 @@ def SnarXiv_training_pipeline(
 
     ### Load Dataset Stage ###
     dataset = data_loader()
-
-    #logger.warn("Trimming data to 1,000 instances for debugging.")
-    #dataset = dataset[range(1000)]
 
     ### Process Dataset Stage ###
     data = process_data(dataset)

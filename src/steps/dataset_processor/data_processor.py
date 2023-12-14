@@ -76,4 +76,3 @@ def process_data(data: Dataset) -> Annotated[Dataset, "Processed Dataset"]:
     data = data.map(training_string_mapper)
 
     return data
-
