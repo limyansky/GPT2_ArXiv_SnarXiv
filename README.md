@@ -8,3 +8,25 @@ While originally intended as a fun game, recent cases of [lawyers citing fake co
 
 ## Coming Soon...
 Further documentation is coming soon... 
+
+## Codes and Resources Used
+- **Python Version:** 3.11
+- **ML Framework:** [TensorFlow](https://www.tensorflow.org/)
+- **MLOps:** [ZenML](https://www.zenml.io/)
+- **OS:** Created in [Arch Linux](https://archlinux.org/)
+
+## Python Packages Used
+
+# Data
+
+## Source Data
+[arXiv Dataset on Kaggle](https://www.kaggle.com/datasets/Cornell-University/arxiv?resource=download)
+**Data License:**[CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/)
+
+## Data Processing
+
+# Code Structure
+
+# Acknowledgements/References
+
+# License
